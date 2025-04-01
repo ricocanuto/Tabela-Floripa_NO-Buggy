@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <title>Panfleto Passeios de Buggy</title>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background-image: url("./Assets/background.jpg");
+            background-size: cover;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* transform: scale(0.7); */
+            /* Reduz o tamanho total */
+            transform-origin: top left;
+            /* Mantém o conteúdo no canto */
+            max-height: 165vh;
+            /* Garante que a altura máxima não ultrapasse a tela */
+        }
+
+        .logo {
+            width: 300px;
+            max-width: 100%;
+            margin-bottom: 10px;
+            mix-blend-mode: multiply;
+            filter: brightness(1.5) contrast(1.4);
+            /* Aumenta o brilho e o contraste */
+            transition: transform 0.2s ease, filter 0.2s ease;
+            /*suaviza o hover*/
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            /* Aumenta o tamanho ao passar o mouse */
+            filter: brightness(1.6) contrast(1.5);
+            /* Brilho e contraste extra no hover */
+        }
+
+        .title {
+            font-family: "Limelight", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffe600;
+            margin: 10px;
+        }
+
+        .card {
+            background-color: rgba(34, 34, 34, 0.4);
+            /* Preto com 80% de opacidade */
+            color: white;
+            font-weight: bolder;
+            padding: 5px;
+            margin: 30px 30px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .cardL {
+            background-color: #222;
+            /* Cor de fundo caso a imagem não carregue */
+            color: white;
+            padding: 5px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-image: url("./Assets/cardL.jpg");
+            background-size: cover;
+            /* Garante que a imagem cubra o card */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetições */
+        }
+
+        .cardS {
+            background-color: #222;
+            /* Cor de fundo caso a imagem não carregue */
+            color: white;
+            padding: 5px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-image: url("./Assets/cardS.jpg");
+            background-size: cover;
+            /* Garante que a imagem cubra o card */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetições */
+        }
+
+        .cardN {
+            background-color: #222;
+            /* Cor de fundo caso a imagem não carregue */
+            color: white;
+            padding: 5px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-image: url("./Assets/cardN.jpg");
+            background-size: cover;
+            /* Garante que a imagem cubra o card */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetições */
+        }
+
+        .cardNII {
+            background-color: #222;
+            /* Cor de fundo caso a imagem não carregue */
+            color: white;
+            padding: 5px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-image: url("./Assets/cardNII.jpg");
+            background-size: cover;
+            /* Garante que a imagem cubra o card */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetições */
+        }
+
+        .price {
+            background: yellow;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .contact {
+            margin-top: 110px;
+            font-size: 12px;
+            color: blanchedalmond;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            max-width: 100%;
+        }
+
+        .Obs {
+            font-size: 18px;
+            color: blanchedalmond;
+            font-weight: bolder;
+            list-style-type: disc;
+            /* Define o marcador como um ponto */
+            text-align: left;
+            /* Alinha a lista à esquerda */
+            margin-top: 20px;
+            padding-left: 20px;
+            /* Distância da lista para a margem esquerda */
+            background-color: rgba(34, 34, 34, 0.6);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .social-icons {
+            padding: 10px;
+        }
+
+        .rotas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 colunas */
+            gap: 20px;
+            /* Espaçamento entre os cards */
+            justify-content: center;
+            /* Centraliza os itens */
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            max-width: 900px;
+            /* Limita a largura máxima */
+            margin: auto;
+            /* Centraliza no container */
+        }
+
+        .cardL,
+        .cardS,
+        .cardN,
+        .cardNII {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            box-sizing: border-box;
+            min-width: 300px;
+            margin: 0 auto;
+            /* Centraliza os itens */
+        }
+        .cardTitle {
+            font-size: 20px;
+        }
+
+        /* Para telas menores que 768px (tablets e celulares grandes) */
+@media screen and (max-width: 768px) {
+    .rotas {
+        grid-template-columns: 1fr; /* Apenas uma coluna */
+    }
+    .container {
+        max-height: fit-content;
+        padding: 0px;
+        margin: 0px;
+    }
+    .logo {
+        width: 200px;
+    }
+    .cardL, .cardS, .cardN, .cardNII {
+        max-width: 100%; /* Ocupa toda a largura disponível */
+    }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0px;
+        margin: 0px;
+    }
+    .logo {
+        width: 200px;
+    }
+    .title {
+        font-size: 20px; /* Reduz um pouco o tamanho do título */
+    }
+
+    .card {
+        padding: 10px; /* Ajusta o espaçamento interno */
+    }
+
+    .price {
+        font-size: 14px; /* Reduz um pouco o tamanho do preço */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./Assets/LogoFlpNoBuggy.png" alt="Logo" class="logo">
+            <div class="title">
+                <p>Passeios de buggy</p>
+                <div>DESTINOS</div>
+            </div>
+            <div class="social-icons">
+                <a href="https://wa.me/5548988308494" target="_blank"><img src="./Assets/whatsapp.jpg"
+                        alt="WhatsApp"></a>
+                <a href="https://instagram.com/floripanobuggy" target="_blank"><img src="./Assets/instagram.jpg"
+                        alt="Instagram"></a>
+                <a href="https://facebook.com/floripanobuggy" target="_blank"><img src="./Assets/facebook.jpg"
+                        alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="rotas">
+            <div class="cardL">
+                <div class="card">
+                    <h3 class="cardTitle">Leste da Ilha <span class="price">R$ 400</span></h3>
+                    <p>Duna da Joaquina, Praia da Joaquina, Praia Mole, Lagoa da Conceição, Barra da Lagoa, Praia do
+                        Moçambique
+                        Duração: 2:30hs aproximadamente
+                    </p>
+                </div>
+            </div>
+            <div class="cardS">
+                <div class="card">
+                    <h3 class="cardTitle">Sul da Ilha <span class="price">R$ 500</span></h3>
+                    <p>Praia do Campeche, Praia da Armação, Praia do Matadeiro, Mirante Morro das Pedras, Pântano do Sul
+                        Duração: 3:30hs aproximadamente
+                    </p>
+                </div>
+            </div>
+            <div class="cardN">
+                <div class="card">
+                    <h3 class="cardTitle">Norte da Ilha <span class="price">R$ 500</span></h3>
+                    <p>Praia Brava, Praia Lagoinha do Norte, Ponta das Canas, Canasvieiras, Praia de Jurerê
+                        Internacional
+                        Duração: 3:30hs aproximadamente
+                    </p>
+                </div>
+            </div>
+            <div class="cardNII">
+                <div class="card">
+                    <h3 class="cardTitle">Norte da Ilha II <span class="price">R$ 500</span></h3>
+                    <p>Praia do Santinho, Praia dos Ingleses (Sul e Norte), Praia do Moçambique
+                        Duração: 3:00hs aproximadamente
+                    </p>
+                </div>
+            </div>
+        </div>
+        <ul class="Obs">
+            <li>Parada de 20 mins. em cada Praia</li>
+            <li>Crianças à partir de 7 anos</li>
+            <li>Valores por buggy para até 3 passageiros</li>
+        </ul>
+    </div>
+</body>
+
+</html>
