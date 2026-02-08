@@ -2,338 +2,250 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-    <title>Panfleto Passeios de Buggy</title>
-    <style>
-        body {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            background-image: url("./Assets/background.jpg");
-            background-size: cover;
-            padding: 5px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* transform: scale(0.7); */
-            /* Reduz o tamanho total */
-            transform-origin: top left;
-            /* Mantém o conteúdo no canto */
-            max-height: 165vh;
-            /* Garante que a altura máxima não ultrapasse a tela */
-        }
-
-        .logo {
-            width: 300px;
-            max-width: 100%;
-            margin-bottom: 10px;
-            mix-blend-mode: multiply;
-            filter: brightness(1.5) contrast(1.4);
-            /* Aumenta o brilho e o contraste */
-            transition: transform 0.2s ease, filter 0.2s ease;
-            /*suaviza o hover*/
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            /* Aumenta o tamanho ao passar o mouse */
-            filter: brightness(1.6) contrast(1.5);
-            /* Brilho e contraste extra no hover */
-        }
-
-        .title {
-            font-family: "Limelight", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 40px;
-            font-weight: bold;
-            color: #ffe600;
-            margin: 10px;
-        }
-
-        .card {
-            background-color: rgba(34, 34, 34, 0.4);
-            /* Preto com 80% de opacidade */
-            color: white;
-            font-weight: bolder;
-            padding: 5px;
-            margin: 30px 30px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 20px;
-        }
-
-        .cardL {
-            background-color: #222;
-            /* Cor de fundo caso a imagem não carregue */
-            color: white;
-            padding: 5px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-image: url("./Assets/cardL.jpg");
-            background-size: cover;
-            /* Garante que a imagem cubra o card */
-            background-position: center;
-            /* Centraliza a imagem */
-            background-repeat: no-repeat;
-            /* Evita repetições */
-        }
-
-        .cardS {
-            background-color: #222;
-            /* Cor de fundo caso a imagem não carregue */
-            color: white;
-            padding: 5px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-image: url("./Assets/cardS.jpg");
-            background-size: cover;
-            /* Garante que a imagem cubra o card */
-            background-position: center;
-            /* Centraliza a imagem */
-            background-repeat: no-repeat;
-            /* Evita repetições */
-        }
-
-        .cardN {
-            background-color: #222;
-            /* Cor de fundo caso a imagem não carregue */
-            color: white;
-            padding: 5px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-image: url("./Assets/cardN.jpg");
-            background-size: cover;
-            /* Garante que a imagem cubra o card */
-            background-position: center;
-            /* Centraliza a imagem */
-            background-repeat: no-repeat;
-            /* Evita repetições */
-        }
-
-        .cardNII {
-            background-color: #222;
-            /* Cor de fundo caso a imagem não carregue */
-            color: white;
-            padding: 5px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-image: url("./Assets/cardNII.jpg");
-            background-size: cover;
-            /* Garante que a imagem cubra o card */
-            background-position: center;
-            /* Centraliza a imagem */
-            background-repeat: no-repeat;
-            /* Evita repetições */
-        }
-
-        .price {
-            background: yellow;
-            color: black;
-            padding: 5px 10px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .contact {
-            margin-top: 110px;
-            font-size: 12px;
-            color: blanchedalmond;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 5px;
-        }
-
-        .social-icons img {
-            width: 40px;
-            max-width: 100%;
-        }
-
-        .Obs {
-            font-size: 18px;
-            color: blanchedalmond;
-            font-weight: bolder;
-            list-style-type: disc;
-            /* Define o marcador como um ponto */
-            text-align: left;
-            /* Alinha a lista à esquerda */
-            margin-top: 20px;
-            padding-left: 20px;
-            /* Distância da lista para a margem esquerda */
-            background-color: rgba(34, 34, 34, 0.6);
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-        }
-
-        img {
-            max-width: 80%;
-            height: auto;
-        }
-
-        .social-icons {
-            padding: 10px;
-        }
-
-        .rotas {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            /* 2 colunas */
-            gap: 20px;
-            /* Espaçamento entre os cards */
-            justify-content: center;
-            /* Centraliza os itens */
-            align-items: center;
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            max-width: 900px;
-            /* Limita a largura máxima */
-            margin: auto;
-            /* Centraliza no container */
-        }
-
-        .cardL,
-        .cardS,
-        .cardN,
-        .cardNII {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            box-sizing: border-box;
-            min-width: 300px;
-            margin: 0 auto;
-            /* Centraliza os itens */
-        }
-        .cardTitle {
-            font-size: 20px;
-        }
-
-        /* Para telas menores que 768px (tablets e celulares grandes) */
-@media screen and (max-width: 768px) {
-    .rotas {
-        grid-template-columns: 1fr; /* Apenas uma coluna */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Limelight&display=swap" rel="stylesheet">
+  <title>Passeios de Buggy — Floripa</title>
+  <style>
+    :root{
+      --accent: #ffe600;
+      --dark: #1f1f1f;
+      --glass: rgba(255,255,255,0.08);
+      --glass-2: rgba(34,34,34,0.55);
+      --radius: 14px;
+      --max-width: 1100px;
     }
-    .container {
-        max-height: fit-content;
-        padding: 0px;
-        margin: 0px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#23272b;
+      color:#f3f6f8;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
-    .logo {
-        width: 200px;
-    }
-    .cardL, .cardS, .cardN, .cardNII {
-        max-width: 100%; /* Ocupa toda a largura disponível */
-    }
+
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px}
+
+    /* Header */
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  box-shadow:0 4px 18px rgba(0,0,0,0.12);
+  background:none;
+  object-fit:cover;
+  filter:brightness(1.2) contrast(1.1);
+  transition:transform .18s ease;
 }
+.logo:hover{transform:scale(1.05)}
+    .title{font-family:Limelight, cursive;font-size:28px;color:var(--accent);text-shadow:0 2px 6px rgba(0,0,0,0.25)}
 
-/* Para telas menores que 480px (celulares pequenos) */
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 0px;
-        margin: 0px;
-    }
-    .logo {
-        width: 200px;
-    }
-    .title {
-        font-size: 20px; /* Reduz um pouco o tamanho do título */
-    }
+    .social-icons a img{width:36px;border-radius:8px}
 
-    .card {
-        padding: 10px; /* Ajusta o espaçamento interno */
-    }
+    /* Hero */
+    .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;background-image:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url('./Assets/background.jpg');background-size:cover;background-position:center;padding:28px}
+    .hero-content{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .hero-left{min-width:220px}
+    .hero h1{margin:0;font-family:Limelight;font-size:44px;color:var(--accent)}
+    .hero p{margin:8px 0 0;color:rgba(255,255,255,0.95);font-weight:600}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(37,211,102,0.18);transition:transform .15s ease}
+    .cta:hover{transform:translateY(-3px)}
 
-    .price {
-        font-size: 14px; /* Reduz um pouco o tamanho do preço */
-    }
-}
+    /* Cards grid */
+    .rotas{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
 
-    </style>
+    .card{position:relative;border-radius:12px;overflow:hidden;min-height:220px;display:flex;align-items:flex-end;box-shadow:0 8px 24px rgba(0,0,0,0.12);cursor:pointer;transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.22)}
+
+    .card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%, rgba(0,0,0,0.6));transition:opacity .2s ease}
+    .card-inner{position:relative;padding:18px;color:white;width:100%}
+    .card h3{margin:0 0 8px;font-size:20px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .price{background:var(--accent);color:#111;padding:6px 10px;border-radius:999px;font-weight:800}
+    .card p{margin:0;font-size:14px;line-height:1.35;opacity:0.95}
+    .card .reserve{margin-top:12px;display:inline-flex;gap:8px;align-items:center}
+    .btn-white{background:rgba(255,255,255,0.92);color:#111;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+
+    /* Individual backgrounds */
+    .card.leste{background-image:url('./Assets/cardL.jpg');background-size:cover;background-position:center}
+    .card.sul{background-image:url('./Assets/cardS.jpg');background-size:cover;background-position:center}
+    .card.norte{background-image:url('./Assets/cardN.jpg');background-size:cover;background-position:center}
+    .card.norte2{background-image:url('./Assets/cardNII.jpg');background-size:cover;background-position:center}
+
+    /* Observações */
+    .obs{margin-top:18px;padding:14px;border-radius:12px;background:var(--glass-2);color:blanchedalmond;font-weight:700}
+    .obs ul{margin:0;padding-left:18px}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal.open{display:flex}
+    .dialog{background:linear-gradient(180deg,#ffffff,#f8fafb);width:100%;max-width:720px;border-radius:12px;padding:18px;box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+    .dialog h4{margin:0 0 10px}
+    .dialog p{margin:8px 0}
+    .dialog .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+    /* Responsive */
+    @media (max-width:900px){.rotas{grid-template-columns:1fr}.hero h1{font-size:34px}.title{font-size:34px}}
+    @media (max-width:520px){.hero{padding:14px}.hero h1{font-size:28px}.logo{width:72px}}
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="./Assets/LogoFlpNoBuggy.png" alt="Logo" class="logo">
-            <div class="title">
-                <p>Passeios de buggy</p>
-                <div>DESTINOS</div>
-            </div>
-            <div class="social-icons">
-                <a href="https://wa.me/5548988308494" target="_blank"><img src="./Assets/whatsapp.jpg"
-                        alt="WhatsApp"></a>
-                <a href="https://instagram.com/floripanobuggy" target="_blank"><img src="./Assets/instagram.jpg"
-                        alt="Instagram"></a>
-                <a href="https://facebook.com/floripanobuggy" target="_blank"><img src="./Assets/facebook.jpg"
-                        alt="Facebook"></a>
-            </div>
+  <div class="wrap">
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <img src="./Assets/LogoFlpNoBuggy.png" alt="Logo Floripa No Buggy" class="logo">
+        <div>
+          <div class="title">Passeios de buggy em Floripa</div>
+          <div style="font-size:24px; color:#667; font-weight: bold;"> Qual seu destino? </div>
         </div>
-        <div class="rotas">
-            <div class="cardL">
-                <div class="card">
-                    <h3 class="cardTitle">Leste da Ilha <span class="price">R$ 400</span></h3>
-                    <p>Duna da Joaquina, Praia da Joaquina, Praia Mole, Lagoa da Conceição, Barra da Lagoa, Praia do
-                        Moçambique
-                        Duração: 2:30hs aproximadamente
-                    </p>
-                </div>
-            </div>
-            <div class="cardS">
-                <div class="card">
-                    <h3 class="cardTitle">Sul da Ilha <span class="price">R$ 500</span></h3>
-                    <p>Praia do Campeche, Praia da Armação, Praia do Matadeiro, Mirante Morro das Pedras, Pântano do Sul
-                        Duração: 3:30hs aproximadamente
-                    </p>
-                </div>
-            </div>
-            <div class="cardN">
-                <div class="card">
-                    <h3 class="cardTitle">Norte da Ilha <span class="price">R$ 500</span></h3>
-                    <p>Praia Brava, Praia Lagoinha do Norte, Ponta das Canas, Canasvieiras, Praia de Jurerê
-                        Internacional
-                        Duração: 3:30hs aproximadamente
-                    </p>
-                </div>
-            </div>
-            <div class="cardNII">
-                <div class="card">
-                    <h3 class="cardTitle">Norte da Ilha II <span class="price">R$ 500</span></h3>
-                    <p>Praia do Santinho, Praia dos Ingleses (Sul e Norte), Praia do Moçambique
-                        Duração: 3:00hs aproximadamente
-                    </p>
-                </div>
-            </div>
+      </div>
+
+      <nav class="social-icons" aria-label="redes sociais">
+        <a href="https://wa.me/554891503805" target="_blank" title="WhatsApp"><img src="./Assets/whatsapp.jpg" alt="WhatsApp"></a>
+        <a href="https://instagram.com/floripanobuggy" target="_blank" title="Instagram"><img src="./Assets/instagram.jpg" alt="Instagram"></a>
+        <a href="https://facebook.com/floripanobuggy" target="_blank" title="Facebook"><img src="./Assets/facebook.jpg" alt="Facebook"></a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="apresentação">
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1>Explore Florianópolis de Buggy</h1>
+          <p>Passeios guiados para praias, dunas e mirantes. Reserve agora e viva a experiência!</p>
+          <div style="margin-top:12px">
+            <a class="cta" href="https://wa.me/554891503805?text=Ol%C3%A1!%20Quero%20reservar%20um%20passeio%20de%20buggy." target="_blank">Reservar via WhatsApp</a>
+          </div>
         </div>
-        <ul class="Obs">
-            <li>Parada de 20 mins. em cada Praia</li>
-            <li>Crianças à partir de 7 anos</li>
-            <li>Valores por buggy para até 3 passageiros</li>
+            <div style="min-width:220px;color:white;text-align:right;opacity:0.95">
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="rotas" role="list">
+        <article class="card leste" data-title="Leste da Ilha" data-price="R$ 500" data-desc="Duna da Joaquina, Praia da Joaquina, Praia Mole, Lagoa da Conceição, Barra da Lagoa, Praia do Moçambique — Duração: 2:30hs aproximadamente" role="listitem" tabindex="0">
+          <div class="card-inner">
+            <h3>Leste da Ilha <span class="price">R$ 500</span></h3>
+            <p>Duna da Joaquina, Praia Mole, Lagoa da Conceição... </p>
+            <div class="reserve">
+              <a class="btn-white" href="#" data-action="details">Ver detalhes</a>
+              <a class="cta" href="https://wa.me/554891503805?text=Ol%C3%A1!%20Quero%20reservar%20o%20passeio%20'Leste%20da%20Ilha'." target="_blank">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card sul" data-title="Sul da Ilha" data-price="R$ 600" data-desc="Praia do Campeche, Armação, Matadeiro, Mirante Morro das Pedras, Pântano do Sul — Duração: 3:30hs aproximadamente" tabindex="0">
+          <div class="card-inner">
+            <h3>Sul da Ilha <span class="price">R$ 600</span></h3>
+            <p>Praia do Campeche, Matadeiro, Mirante Morro das Pedras...</p>
+            <div class="reserve">
+              <a class="btn-white" href="#" data-action="details">Ver detalhes</a>
+              <a class="cta" href="https://wa.me/554891503805?text=Ol%C3%A1!%20Quero%20reservar%20o%20passeio%20'Sul%20da%20Ilha'." target="_blank">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card norte" data-title="Norte da Ilha" data-price="R$ 600" data-desc="Praia Brava, Lagoinha do Norte, Ponta das Canas, Canasvieiras, Jurerê — Duração: 3:30hs aproximadamente" tabindex="0">
+          <div class="card-inner">
+            <h3>Norte da Ilha <span class="price">R$ 600</span></h3>
+            <p>Praia Brava, Lagoinha do Norte, Jurerê...</p>
+            <div class="reserve">
+              <a class="btn-white" href="#" data-action="details">Ver detalhes</a>
+              <a class="cta" href="https://wa.me/554891503805?text=Ol%C3%A1!%20Quero%20reservar%20o%20passeio%20'Norte%20da%20Ilha'." target="_blank">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card norte2" data-title="Norte da Ilha II" data-price="R$ 600" data-desc="Praia do Santinho, Ingleses, Moçambique — Duração: 3:00hs aproximadamente" tabindex="0">
+          <div class="card-inner">
+            <h3>Norte da Ilha II <span class="price">R$ 600</span></h3>
+            <p>Santinho, Ingleses, Moçambique...</p>
+            <div class="reserve">
+              <a class="btn-white" href="#" data-action="details">Ver detalhes</a>
+              <a class="cta" href="https://wa.me/554891503805?text=Ol%C3%A1!%20Quero%20reservar%20o%20passeio%20'Norte%20da%20Ilha%20II'." target="_blank">Reservar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="obs" aria-live="polite">
+        <ul>
+          <li>Parada de 20 minutos em cada praia para fotos, banho ou consumo</li>
+          <li>Crianças a partir de 7 anos</li>
+          <li>Valores por buggy para até 3 passageiros</li>
         </ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal detalhado -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="dialog" role="document">
+      <h4 id="m-title"></h4>
+      <p id="m-desc"></p>
+      <p><strong>Preço: </strong><span id="m-price"></span></p>
+      <div class="actions">
+        <a id="m-reserve" class="cta" href="#" target="_blank">Reservar via WhatsApp</a>
+        <button id="m-close" class="btn-white">Fechar</button>
+      </div>
     </div>
+  </div>
+
+  <script>
+    // Interatividade: abrir modal com detalhes
+    const modal = document.getElementById('modal');
+    const mTitle = document.getElementById('m-title');
+    const mDesc = document.getElementById('m-desc');
+    const mPrice = document.getElementById('m-price');
+    const mReserve = document.getElementById('m-reserve');
+    const mClose = document.getElementById('m-close');
+
+    document.querySelectorAll('.card [data-action="details"]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const card = e.target.closest('.card');
+        openModal(card);
+      });
+    });
+
+    // also open on card keyboard Enter
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter') openModal(card);
+      });
+      card.addEventListener('click', ()=> openModal(card));
+    });
+
+    function openModal(card){
+      if(!card) return;
+      const title = card.dataset.title || '';
+      const price = card.dataset.price || '';
+      const desc = card.dataset.desc || '';
+      mTitle.textContent = title;
+      mDesc.textContent = desc;
+      mPrice.textContent = price;
+      // create whatsapp url with encoded message
+      const text = encodeURIComponent(`Olá! Quero reservar o passeio '${title}' - ${price}`);
+      mReserve.href = `https://wa.me/554891503805?text=${text}`;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    mClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+  </script>
 </body>
 
 </html>
